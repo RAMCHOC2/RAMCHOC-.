@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte</title>
+    <style>
+       body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background: #4a90e2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.header .gid {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: #333333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 5px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.account-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.revenue-summary {
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e4e8;
+}
+
+.revenue-summary h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.revenue-summary p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: #28a745;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.button-group button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.footer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-buttons button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.footer-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Mon Compte</h1>
+        <div class="gid" id="gid">Identifiant GID: </div>
+    </div>
+    <div class="content">
+        <div class="account-container">
+            <div class="revenue-summary">
+                <h3>Revenus Quotidiens</h3>
+                <p id="vip">VIP:0</p>
+                <p id="hourlyIncome">Revenus horaires: 00 XOF</p>
+                <p id="dailyIncome">Revenus quotidiens: 00 XOF</p>
+                <p id="commission">Commission: 00 XOF</p>
+            </div>
+            <div class="button-group">
+                <button class="history-button" onclick="location.href='historique_de_paiement.html'">Historique de recharge 🗑️</button>
+                <button class="revenue-button" onclick="location.href='tableau-revenus.html'">Tableau des revenus 📊</button>
+            </div>
+        </div>
+        <div class="footer-buttons">
+            <button onclick="location.href='depot.html'">Recharge</button>
+            <button onclick="location.href='retrait.html'">Retrait</button>
+            <button onclick="location.href='portefeuille.html'">Portefeuille</button>
+            <button onclick="location.href='equipe.html'">Équipe</button>
+            <button class="service-button" onclick="location.href='service-client.html'">Service Client</button>
+        </div>
+        <div class="footer-note">
+            Cher utilisateur de notre plateforme, si vous rencontrez des problèmes, n'hésitez pas à nous contacter. Votre compte est notre priorité. Notez bien que votre code de parrainage et le compte GID peuvent changer à tout moment.
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour générer un GID aléatoire (exemple simple)
+        function generateGID() {
+            return 'GID-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        }
+
+        // Met à jour le texte de l'élément avec l'ID 'gid'
+        document.getElementById('gid').textContent = 'Identifiant GID: ' + generateGID();
+    </script>
+</body>
+</html>
